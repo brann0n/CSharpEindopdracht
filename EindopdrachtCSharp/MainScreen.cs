@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,16 @@ namespace EindopdrachtCSharp
     {
         public MainScreen()
         {
+            Thread t = new Thread(new ThreadStart(splash));
+            t.Start();
+            Thread.Sleep(2000);
+            t.Abort();
             InitializeComponent();
+
+            //to bring the form to the foreground
+            this.WindowState = FormWindowState.Minimized;
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,6 +50,12 @@ namespace EindopdrachtCSharp
         private void SluitenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+        public void splash()
+        {
+            Application.Run(new SplashScreen());
         }
     }
 }
