@@ -57,5 +57,10 @@ namespace EindopdrachtCSharp
         {
             Application.Run(new SplashScreen());
         }
-    }
+
+		private void Button1_Click(object sender, EventArgs e)
+		{
+			WeatherAPIControl control = new WeatherAPIControl("test");
+		}
+	}
 }
