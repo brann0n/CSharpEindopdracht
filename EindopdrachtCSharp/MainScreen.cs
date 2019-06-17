@@ -60,7 +60,7 @@ namespace EindopdrachtCSharp
 
 		private void Button1_Click(object sender, EventArgs e)
 		{
-			WeatherAPIControl control = new WeatherAPIControl("test");
+			new WeatherAPIControl("YEET", "Emmen,nl").Save();
 		}
 	}
 }

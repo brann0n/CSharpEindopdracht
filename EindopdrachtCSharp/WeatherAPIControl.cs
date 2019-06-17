@@ -8,13 +8,22 @@ namespace EindopdrachtCSharp
 {
 	class WeatherAPIControl
 	{
-		public WeatherAPIControl(string apiKey)
+		ApiResponseObject _currObject;
+		public WeatherAPIControl(string apiKey, string locale)
 		{
-			
-			var response = RestHelper.Get("http://api.openweathermap.org", "data/2.5/weather?q=Emmen,nl&units=metric", apiKey);
-			ApiResponseObject rObject = RestHelper.ConvertJsonToObject<ApiResponseObject>(response.Content);
+			_currObject = new ApiResponseObject();
 
-			string temp = rObject.main.temp.ToString();
+			string resourceUrl = string.Format("data/2.5/weather?q={0}&units=metric", locale);
+
+			var response = RestHelper.Get("http://api.openweathermap.org", resourceUrl, apiKey);
+			_currObject = RestHelper.ConvertJsonToObject<ApiResponseObject>(response.Content);
+
+			string temp = _currObject.main.temp.ToString();
+		}
+
+		public void Save()
+		{
+			//write _currObject to the database.
 		}
 	}
 }
