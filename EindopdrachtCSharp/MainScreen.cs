@@ -62,5 +62,11 @@ namespace EindopdrachtCSharp
 		{
 			new WeatherAPIControl("YEET", "Emmen,nl").Save();
 		}
+
+		private void OptiesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Show();
+			MainScreenTabControl.SelectTab(2);
+		}
 	}
 }

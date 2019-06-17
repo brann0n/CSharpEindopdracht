@@ -114,46 +114,47 @@
 			this.contextMenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.ShowImageMargin = false;
-			this.contextMenuStrip1.Size = new System.Drawing.Size(100, 126);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(156, 148);
 			// 
 			// overToolStripMenuItem
 			// 
 			this.overToolStripMenuItem.Name = "overToolStripMenuItem";
-			this.overToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.overToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.overToolStripMenuItem.Text = "Over";
 			// 
 			// verversenToolStripMenuItem
 			// 
 			this.verversenToolStripMenuItem.Name = "verversenToolStripMenuItem";
-			this.verversenToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.verversenToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.verversenToolStripMenuItem.Text = "Verversen";
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(96, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(152, 6);
 			// 
 			// optiesToolStripMenuItem
 			// 
 			this.optiesToolStripMenuItem.Name = "optiesToolStripMenuItem";
-			this.optiesToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.optiesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.optiesToolStripMenuItem.Text = "Opties";
+			this.optiesToolStripMenuItem.Click += new System.EventHandler(this.OptiesToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(96, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(152, 6);
 			// 
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.openToolStripMenuItem.Text = "Open";
 			// 
 			// sluitenToolStripMenuItem
 			// 
 			this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
-			this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
 			this.sluitenToolStripMenuItem.Text = "Sluiten";
 			this.sluitenToolStripMenuItem.Click += new System.EventHandler(this.SluitenToolStripMenuItem_Click);
 			// 
