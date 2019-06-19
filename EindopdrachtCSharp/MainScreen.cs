@@ -191,5 +191,10 @@ namespace EindopdrachtCSharp
 				lbl_graphCityName.Text = "Emmen";
 			}
 		}
+
+		private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Show();
+		}
 	}
 }

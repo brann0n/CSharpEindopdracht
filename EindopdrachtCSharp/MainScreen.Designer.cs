@@ -35,6 +35,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
 			this.MainScreenTabControl = new System.Windows.Forms.TabControl();
 			this.tpActueel = new System.Windows.Forms.TabPage();
+			this.lblLastUpdate = new System.Windows.Forms.Label();
 			this.lblWindActueel = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.lblAirActueel = new System.Windows.Forms.Label();
@@ -61,6 +62,8 @@
 			this.lbl_citySearch = new System.Windows.Forms.Label();
 			this.TaskbarIcon = new System.Windows.Forms.NotifyIcon(this.components);
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.tempratuurPlaceholderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.overToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.verversenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -69,9 +72,6 @@
 			this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.sluitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshTimer = new System.Windows.Forms.Timer(this.components);
-			this.lblLastUpdate = new System.Windows.Forms.Label();
-			this.tempratuurPlaceholderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.MainScreenTabControl.SuspendLayout();
 			this.tpActueel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.weatherIcon)).BeginInit();
@@ -114,6 +114,17 @@
 			this.tpActueel.TabIndex = 0;
 			this.tpActueel.Text = "Actueel";
 			this.tpActueel.UseVisualStyleBackColor = true;
+			// 
+			// lblLastUpdate
+			// 
+			this.lblLastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblLastUpdate.AutoSize = true;
+			this.lblLastUpdate.Enabled = false;
+			this.lblLastUpdate.Location = new System.Drawing.Point(297, 292);
+			this.lblLastUpdate.Name = "lblLastUpdate";
+			this.lblLastUpdate.Size = new System.Drawing.Size(71, 13);
+			this.lblLastUpdate.TabIndex = 11;
+			this.lblLastUpdate.Text = "last updated: ";
 			// 
 			// lblWindActueel
 			// 
@@ -402,7 +413,19 @@
 			this.contextMenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.ShowImageMargin = false;
-			this.contextMenuStrip1.Size = new System.Drawing.Size(212, 166);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(212, 188);
+			// 
+			// tempratuurPlaceholderToolStripMenuItem
+			// 
+			this.tempratuurPlaceholderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+			this.tempratuurPlaceholderToolStripMenuItem.Name = "tempratuurPlaceholderToolStripMenuItem";
+			this.tempratuurPlaceholderToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+			this.tempratuurPlaceholderToolStripMenuItem.Text = "tempratuur placeholder";
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(208, 6);
 			// 
 			// overToolStripMenuItem
 			// 
@@ -440,6 +463,7 @@
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
 			this.openToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
 			this.openToolStripMenuItem.Text = "Open";
+			this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
 			// 
 			// sluitenToolStripMenuItem
 			// 
@@ -452,29 +476,6 @@
 			// 
 			this.refreshTimer.Interval = 60000;
 			this.refreshTimer.Tick += new System.EventHandler(this.RefreshTimer_Tick);
-			// 
-			// lblLastUpdate
-			// 
-			this.lblLastUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.lblLastUpdate.AutoSize = true;
-			this.lblLastUpdate.Enabled = false;
-			this.lblLastUpdate.Location = new System.Drawing.Point(297, 292);
-			this.lblLastUpdate.Name = "lblLastUpdate";
-			this.lblLastUpdate.Size = new System.Drawing.Size(71, 13);
-			this.lblLastUpdate.TabIndex = 11;
-			this.lblLastUpdate.Text = "last updated: ";
-			// 
-			// tempratuurPlaceholderToolStripMenuItem
-			// 
-			this.tempratuurPlaceholderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-			this.tempratuurPlaceholderToolStripMenuItem.Name = "tempratuurPlaceholderToolStripMenuItem";
-			this.tempratuurPlaceholderToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
-			this.tempratuurPlaceholderToolStripMenuItem.Text = "tempratuur placeholder";
-			// 
-			// toolStripSeparator3
-			// 
-			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(208, 6);
 			// 
 			// MainScreen
 			// 
