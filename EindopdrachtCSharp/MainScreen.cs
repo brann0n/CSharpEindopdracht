@@ -143,10 +143,20 @@ namespace EindopdrachtCSharp
 			EindopdrachtEntities db = new EindopdrachtEntities();
 			List<DateTime> dates = get5DayWeather().Select(n => n.Timestamp.Value.Date).Distinct().ToList();
 			List<double> temps = new List<double>();
-
-			foreach (var date in dates)
+			if (radio_celsius.Checked)
 			{
-				temps.Add(get5DayWeather().Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature)));
+				foreach (var date in dates)
+				{
+					temps.Add(get5DayWeather().Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature)));
+				}
+			}
+			else
+			{
+				foreach (var date in dates)
+				{
+					double temp = get5DayWeather().Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature));
+					temps.Add(((9.0 / 5.0) * temp + 32));
+				}
 			}
 
 			chart1.Series.Clear();

@@ -224,13 +224,13 @@
 			this.chart1.ChartAreas.Add(chartArea1);
 			legend1.Name = "Legend1";
 			this.chart1.Legends.Add(legend1);
-			this.chart1.Location = new System.Drawing.Point(22, 83);
+			this.chart1.Location = new System.Drawing.Point(8, 74);
 			this.chart1.Name = "chart1";
 			series1.ChartArea = "ChartArea1";
 			series1.Legend = "Legend1";
 			series1.Name = "Series1";
 			this.chart1.Series.Add(series1);
-			this.chart1.Size = new System.Drawing.Size(396, 219);
+			this.chart1.Size = new System.Drawing.Size(410, 228);
 			this.chart1.TabIndex = 3;
 			this.chart1.Text = "chart1";
 			// 
@@ -402,7 +402,7 @@
 			this.contextMenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.ShowImageMargin = false;
-			this.contextMenuStrip1.Size = new System.Drawing.Size(212, 188);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(212, 166);
 			// 
 			// overToolStripMenuItem
 			// 
