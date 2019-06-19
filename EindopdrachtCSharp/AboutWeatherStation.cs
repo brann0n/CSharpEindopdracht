@@ -100,6 +100,11 @@ namespace EindopdrachtCSharp
                 return ((AssemblyCompanyAttribute)attributes[0]).Company;
             }
         }
-        #endregion
-    }
+		#endregion
+
+		private void OkButton_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
+	}
 }

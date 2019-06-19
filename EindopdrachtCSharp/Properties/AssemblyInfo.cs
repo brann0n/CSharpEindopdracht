@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EindopdrachtCSharp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Deze opdracht is gemaakt voor de module C#")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EindopdrachtCSharp")]
+[assembly: AssemblyCompany("Brandon")]
+[assembly: AssemblyProduct("Eindopdracht C#")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Brandon")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

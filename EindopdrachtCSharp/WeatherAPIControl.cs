@@ -65,16 +65,30 @@ namespace EindopdrachtCSharp
 		/// <returns></returns>
 		public void UpdateScreen(MainScreen screen)
 		{
+			
+
 
 			if (_currObject != null && _weather != null)
 			{
+				string currentTemp = "";
+				if (screen.radio_celsius.Checked)
+				{
+					currentTemp = string.Format("{0} °C", _currObject.main.temp);
+				}
+				else
+				{
+					currentTemp = string.Format("{0} °F", ((9.0 / 5.0) * _currObject.main.temp + 32));
+				}
+
 				screen.weatherIcon.ImageLocation = "http://openweathermap.org/img/w/" + _weather.icon + ".png";
 				screen.lblLocationActueel.Text = string.Format("{0}, {1}", _currObject.name, _currObject.sys.country);
 				screen.lblWeatherInfoActueel.Text = _weather.main;
 				screen.lblWeatherLongActueel.Text = _weather.description;
-				screen.lblTemperatureActueel.Text = string.Format("{0} °C", _currObject.main.temp);
+				screen.lblTemperatureActueel.Text = string.Format("{0}", currentTemp);
 				screen.lblWindActueel.Text = string.Format("{0} met {1} km/h", calcDirection(_currObject.wind.deg), _currObject.wind.speed);
 				screen.lblAirActueel.Text = string.Format("{0}%", _currObject.main.humidity);
+				screen.contextMenuStrip1.Items[0].Text = "Temperatuur: " + currentTemp;
+				//update the contect menu
 
 				//set the last refresh date
 				screen.lblLastUpdate.Text = string.Format("(Laatste update: {0})", DateTime.Now.ToLongTimeString());
@@ -85,12 +99,23 @@ namespace EindopdrachtCSharp
 				WeatherInfo latestRecord = db.WeatherInfoes.LastOrDefault();	
 				if(latestRecord != null)
 				{
+					string currentTemp = "";
+					if (screen.radio_celsius.Checked)
+					{
+						currentTemp = string.Format("{0} °C", latestRecord.Temperature);
+					}
+					else
+					{
+						currentTemp = string.Format("{0} °F", ((9.0 / 5.0) * double.Parse(latestRecord.Temperature) + 32));
+					}
+
 					screen.lblLocationActueel.Text = string.Format("{0}, {1}", latestRecord.Locale, latestRecord.Country);
 					screen.lblWeatherInfoActueel.Text = latestRecord.MainInfo;
 					screen.lblWeatherLongActueel.Text = latestRecord.Description;
-					screen.lblTemperatureActueel.Text = string.Format("{0} °C", latestRecord.Temperature);
+					screen.lblTemperatureActueel.Text = string.Format("{0}", currentTemp);
 					screen.lblWindActueel.Text = "Unavailable";
 					screen.lblAirActueel.Text = "Unavailable";
+					screen.contextMenuStrip1.Items[0].Text = "Temperatuur: " + currentTemp;
 				}
 			}
 		}

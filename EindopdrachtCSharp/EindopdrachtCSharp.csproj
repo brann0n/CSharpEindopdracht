@@ -172,6 +172,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database script file.txt" />
     <Content Include="Images\Artboard 1Normal.png" />
     <Content Include="Images\Logo_72.ico" />
     <Content Include="WeatherDB.Context.tt">

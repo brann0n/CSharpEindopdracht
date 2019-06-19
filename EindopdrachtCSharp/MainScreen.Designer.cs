@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-			System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-			System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+			System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+			System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+			System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
 			this.MainScreenTabControl = new System.Windows.Forms.TabControl();
 			this.tpActueel = new System.Windows.Forms.TabPage();
@@ -70,6 +70,8 @@
 			this.sluitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.refreshTimer = new System.Windows.Forms.Timer(this.components);
 			this.lblLastUpdate = new System.Windows.Forms.Label();
+			this.tempratuurPlaceholderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.MainScreenTabControl.SuspendLayout();
 			this.tpActueel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.weatherIcon)).BeginInit();
@@ -218,16 +220,16 @@
 			// 
 			// chart1
 			// 
-			chartArea3.Name = "ChartArea1";
-			this.chart1.ChartAreas.Add(chartArea3);
-			legend3.Name = "Legend1";
-			this.chart1.Legends.Add(legend3);
+			chartArea1.Name = "ChartArea1";
+			this.chart1.ChartAreas.Add(chartArea1);
+			legend1.Name = "Legend1";
+			this.chart1.Legends.Add(legend1);
 			this.chart1.Location = new System.Drawing.Point(22, 83);
 			this.chart1.Name = "chart1";
-			series3.ChartArea = "ChartArea1";
-			series3.Legend = "Legend1";
-			series3.Name = "Series1";
-			this.chart1.Series.Add(series3);
+			series1.ChartArea = "ChartArea1";
+			series1.Legend = "Legend1";
+			series1.Name = "Series1";
+			this.chart1.Series.Add(series1);
 			this.chart1.Size = new System.Drawing.Size(396, 219);
 			this.chart1.TabIndex = 3;
 			this.chart1.Text = "chart1";
@@ -388,6 +390,8 @@
 			// contextMenuStrip1
 			// 
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tempratuurPlaceholderToolStripMenuItem,
+            this.toolStripSeparator3,
             this.overToolStripMenuItem,
             this.verversenToolStripMenuItem,
             this.toolStripSeparator2,
@@ -398,47 +402,49 @@
 			this.contextMenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
 			this.contextMenuStrip1.Name = "contextMenuStrip1";
 			this.contextMenuStrip1.ShowImageMargin = false;
-			this.contextMenuStrip1.Size = new System.Drawing.Size(100, 126);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(212, 188);
 			// 
 			// overToolStripMenuItem
 			// 
 			this.overToolStripMenuItem.Name = "overToolStripMenuItem";
-			this.overToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.overToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
 			this.overToolStripMenuItem.Text = "Over";
+			this.overToolStripMenuItem.Click += new System.EventHandler(this.OverToolStripMenuItem_Click);
 			// 
 			// verversenToolStripMenuItem
 			// 
 			this.verversenToolStripMenuItem.Name = "verversenToolStripMenuItem";
-			this.verversenToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.verversenToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
 			this.verversenToolStripMenuItem.Text = "Verversen";
+			this.verversenToolStripMenuItem.Click += new System.EventHandler(this.VerversenToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator2
 			// 
 			this.toolStripSeparator2.Name = "toolStripSeparator2";
-			this.toolStripSeparator2.Size = new System.Drawing.Size(96, 6);
+			this.toolStripSeparator2.Size = new System.Drawing.Size(208, 6);
 			// 
 			// optiesToolStripMenuItem
 			// 
 			this.optiesToolStripMenuItem.Name = "optiesToolStripMenuItem";
-			this.optiesToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.optiesToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
 			this.optiesToolStripMenuItem.Text = "Opties";
 			this.optiesToolStripMenuItem.Click += new System.EventHandler(this.OptiesToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator1
 			// 
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(96, 6);
+			this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
 			// 
 			// openToolStripMenuItem
 			// 
 			this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-			this.openToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.openToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
 			this.openToolStripMenuItem.Text = "Open";
 			// 
 			// sluitenToolStripMenuItem
 			// 
 			this.sluitenToolStripMenuItem.Name = "sluitenToolStripMenuItem";
-			this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+			this.sluitenToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
 			this.sluitenToolStripMenuItem.Text = "Sluiten";
 			this.sluitenToolStripMenuItem.Click += new System.EventHandler(this.SluitenToolStripMenuItem_Click);
 			// 
@@ -457,6 +463,18 @@
 			this.lblLastUpdate.Size = new System.Drawing.Size(71, 13);
 			this.lblLastUpdate.TabIndex = 11;
 			this.lblLastUpdate.Text = "last updated: ";
+			// 
+			// tempratuurPlaceholderToolStripMenuItem
+			// 
+			this.tempratuurPlaceholderToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+			this.tempratuurPlaceholderToolStripMenuItem.Name = "tempratuurPlaceholderToolStripMenuItem";
+			this.tempratuurPlaceholderToolStripMenuItem.Size = new System.Drawing.Size(211, 24);
+			this.tempratuurPlaceholderToolStripMenuItem.Text = "tempratuur placeholder";
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(208, 6);
 			// 
 			// MainScreen
 			// 
@@ -494,7 +512,6 @@
         private System.Windows.Forms.TabPage tbTrend;
         private System.Windows.Forms.TabPage tpOpties;
         private System.Windows.Forms.NotifyIcon TaskbarIcon;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sluitenToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem overToolStripMenuItem;
@@ -503,8 +520,6 @@
 		private System.Windows.Forms.ToolStripMenuItem optiesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.RadioButton radio_fahrenheit;
-		private System.Windows.Forms.RadioButton radio_celsius;
 		private System.Windows.Forms.CheckBox checkBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -526,6 +541,11 @@
 		public System.Windows.Forms.Label lblAirActueel;
 		public System.Windows.Forms.Label lblTemperatureActueel;
 		public System.Windows.Forms.Label lblLastUpdate;
+		public System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		public System.Windows.Forms.RadioButton radio_fahrenheit;
+		public System.Windows.Forms.RadioButton radio_celsius;
+		private System.Windows.Forms.ToolStripMenuItem tempratuurPlaceholderToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
 	}
 }
 
