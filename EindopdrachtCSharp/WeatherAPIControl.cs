@@ -13,7 +13,7 @@ namespace EindopdrachtCSharp
 		EindopdrachtEntities db = new EindopdrachtEntities();
 		public WeatherAPIControl(string apiKey, string locale)
 		{
-			_currObject = new ApiResponseObject();
+			//_currObject = new ApiResponseObject();
 			string resourceUrl = string.Format("data/2.5/weather?q={0}&units=metric", locale);
 
 			var response = RestHelper.Get("http://api.openweathermap.org", resourceUrl, apiKey);
@@ -27,7 +27,7 @@ namespace EindopdrachtCSharp
 		/// <returns>Current Object</returns>
 		public void Save()
 		{
-			if (_currObject != null)
+			if (_currObject != null && _currObject.weather.Count != 0)
 			{
 				//write _currObject to the database.
 				WeatherInfo newRecord = new WeatherInfo
@@ -96,7 +96,7 @@ namespace EindopdrachtCSharp
 			else
 			{
 				//get the latest database values.
-				WeatherInfo latestRecord = db.WeatherInfoes.LastOrDefault();	
+				WeatherInfo latestRecord = db.WeatherInfoes.OrderByDescending(c => c.Id).FirstOrDefault();	
 				if(latestRecord != null)
 				{
 					string currentTemp = "";
