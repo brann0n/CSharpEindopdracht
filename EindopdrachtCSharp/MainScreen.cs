@@ -14,7 +14,7 @@ namespace EindopdrachtCSharp
 {
 	public partial class MainScreen : Form
 	{
-		private const string apiKey = "YEET";
+		private const string apiKey = "33079ad65a697d0de15a8ab330c3ff6a";
 		public DateTime lastRefresh = DateTime.Now;
 		public MainScreen()
 		{
@@ -72,11 +72,6 @@ namespace EindopdrachtCSharp
 			Application.Run(new SplashScreen());
 		}
 
-		private void Button1_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void OptiesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Show();
@@ -125,7 +120,7 @@ namespace EindopdrachtCSharp
 			DateTime beginDate = DateTime.Today.AddDays(-5);
 			DateTime endDate = DateTime.Today;
 			WeatherInfo[] histData = db.WeatherInfoes.Where(record => record.Timestamp >= beginDate && record.Timestamp <= endDate).ToArray();
-			return histData.Where(data => data.Locale == ((string.IsNullOrEmpty(locale) ? locale : "Emmen"))).ToList();
+			return histData.Where(data => data.Locale == locale).ToList();
 		}
 
 		private void VerversenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,20 +136,22 @@ namespace EindopdrachtCSharp
 		private void drawGraph()
 		{
 			EindopdrachtEntities db = new EindopdrachtEntities();
-			List<DateTime> dates = get5DayWeather().Select(n => n.Timestamp.Value.Date).Distinct().ToList();
+
+            List<WeatherInfo> dataForGraph = get5DayWeather();
+			List<DateTime> dates = dataForGraph.Select(n => n.Timestamp.Value.Date).Distinct().ToList();
 			List<double> temps = new List<double>();
 			if (radio_celsius.Checked)
 			{
 				foreach (var date in dates)
 				{
-					temps.Add(get5DayWeather().Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature)));
+					temps.Add(dataForGraph.Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature)));
 				}
 			}
 			else
 			{
 				foreach (var date in dates)
 				{
-					double temp = get5DayWeather().Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature));
+					double temp = dataForGraph.Where(all => all.Timestamp.Value.Date == date).Average(avg => double.Parse(avg.Temperature));
 					temps.Add(((9.0 / 5.0) * temp + 32));
 				}
 			}
@@ -174,11 +171,10 @@ namespace EindopdrachtCSharp
 				chart1.ChartAreas[0].AxisY.LabelStyle.Format = "{#,##} \u00B0" + "F";
 			}
 
-
 			chart1.Series.Add(series);
 			chart1.Series[0].IsVisibleInLegend = false;
-
-			chart1.ChartAreas[0].RecalculateAxesScale();
+            chart1.ChartAreas[0].AxisX.IsMarginVisible = false;
+            chart1.ChartAreas[0].RecalculateAxesScale();
 
 			//kijkt of er een stad is ingevoert
 			if (txt_cityname.Text != "")

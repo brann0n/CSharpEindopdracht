@@ -64,10 +64,7 @@ namespace EindopdrachtCSharp
 		/// </summary>
 		/// <returns></returns>
 		public void UpdateScreen(MainScreen screen)
-		{
-			
-
-
+		{		
 			if (_currObject != null && _weather != null)
 			{
 				string currentTemp = "";
